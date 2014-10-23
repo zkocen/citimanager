@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class ThreadSafeRequest
+ * Servlet implementation class NonThreadSafeServlet
  */
-@WebServlet("/threadsaferequest.do")
-public class ThreadSafeRequest extends HttpServlet {
+@WebServlet("/nonthreadsafeservlet.do")
+public class NonThreadSafeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ThreadSafeRequest() {
+    public NonThreadSafeServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,41 +30,25 @@ public class ThreadSafeRequest extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		StringBuilder msg = new StringBuilder("");
 		msg.append("<html><body>");
-		int currentSeed = (int) getServletContext().getAttribute("currentSeedValue");
-		msg.append(String.format("Attribute Retrieved Value: %d<br>", currentSeed));
+		int currentSeed = (int)getServletContext().getAttribute("currentSeedValue");
+		msg.append(String.format("Attribute Retrieved value: %d <br>", currentSeed));
 		currentSeed *= 2;
 		
-		request.setAttribute("currentSeedValue", currentSeed);
-		
-		//getServletContext().setAttribute("currentSeedValue", currentSeed);
-		
+		getServletContext().setAttribute("currentSeedValue", currentSeed);
 		try {
 			Thread.sleep(5000);
 		} catch (InterruptedException e) {
 			// TODO: handle exception
 		}
-		
-		
-		getServletContext().setAttribute("currentSeedValue", currentSeed);
-		
-		currentSeed = (int)request.getAttribute("currentSeedValue");
-		msg.append(String.format("Request attribute retrieved value after process: %d<br>", currentSeed));
-		
 		currentSeed = (int)getServletContext().getAttribute("currentSeedValue");
-		msg.append(String.format("Context attribute retrieved value after process: %d<br>", currentSeed));
+		msg.append(String.format("Attribute retrieved value after process: %d <br>", currentSeed));
 		msg.append("</body></html>");
 		
 		response.setContentType("text/html");
+		
 		PrintWriter out = response.getWriter();
 		out.println(msg);
-		
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 	}
 
 }
+  
