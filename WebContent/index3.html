@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="ISO-8859-1" />
+<title>Thread Safety</title>
+</head>
+<body>
+	<table style="width: 600px;">
+		<tr>
+			<td style="width: 100%;">
+				<form id="formNonThreadSafe" method="post" action="/CityManagerWeb/threadsafegetseed.do">
+				<span>Select one:</span><br>
+				<input type="radio" name="threadsafetyselection" value="requestthread" /> Request level attributes<br>
+				<input type="radio" name="threadsafetyselection" value="nonthreadsafe" /> Non thread safe <br>
+				<input type="radio" name="threadsafetyselection" value="threadsafe" /> Thread safe <br>
+				<input type="submit" value="Execute" />
+				</form>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
