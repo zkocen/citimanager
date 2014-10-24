@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class UserLoginCookies
  */
-@WebServlet("/UserLoginCookies")
+@WebServlet("/userlogincookies.do")
 public class UserLoginCookies extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -55,7 +55,7 @@ public class UserLoginCookies extends HttpServlet {
 			response.sendRedirect(response.encodeRedirectURL("index_cookies.html"));
 		}
 		else {
-			response.sendRedirect(response.encodeRedirectURL("CityManagerWeb/destinationpade.do"));
+			response.sendRedirect(response.encodeRedirectURL("/CityManagerWeb/destinationpage.do"));
 		}
 	}
 

@@ -3,15 +3,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Insert title here</title>
+<title>Welcome</title>
 </head>
 <body>
-	<form id="form1" method="post" action="CityManagerWeb/Loginwithcookieinfo.do">
+	<form id="form1" method="post" action="/CityManagerWeb/loginwithcookieinfo.do">
 		<table style="width:100%">
 			<tr>
 			<td>
-				<input name="Loginoption" type="submit" value="Remove Cookies" />
+				<input name="loginoption" type="submit" value="Login" />
 			</td>
+			</tr>
+		</table>
+	</form>
+	<form id="form2" method="post" action="/CityManagerWeb/removecookies.do">
+		<table style="width:100%">
+			<tr>
+				<td>
+					<input name="removecookies" type="submit" value="Remove Cookies" />
+				</td>
 			</tr>
 		</table>
 	</form>
