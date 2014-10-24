@@ -43,10 +43,10 @@ public class UserLogin extends HttpServlet {
 		s.setAttribute("userAuthLevel", authLevel);
 		
 		if (authLevel < 1 || uid == null || uid == "") {
-			response.sendRedirect("Login.html");
+			response.sendRedirect(response.encodeRedirectURL("Login.html"));
 		}
 		else {
-			response.sendRedirect("/CityManagerWeb/destinationpage.do");
+			response.sendRedirect(response.encodeRedirectURL("/CityManagerWeb/destinationpage.do"));
 		}
 	}
 
