@@ -56,7 +56,7 @@ public class ListAllCities extends HttpServlet {
 					+ "<tr><td>ID</td><td>Name</td><td>CountryCode</td><td>District</td>"
 					+ "<td>Population</td></tr>");
 			
-			String query = "select * from city";
+			String query = "select * from city where District = 'Koroska'";
 			ResultSet rs = dbm.ExecuteResultSet(query);
 			while (rs.next()) {
 				int id = rs.getInt("ID");
