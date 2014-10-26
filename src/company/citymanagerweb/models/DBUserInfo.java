@@ -6,45 +6,35 @@ public abstract class DBUserInfo
 	private String pwd;
 	private String cat;
 	
-	public DBUserInfo()
-	{
-		
-	}
+	public DBUserInfo() {}
 	
-	public DBUserInfo(String userID, String password, String catalog)
-	{
+	public DBUserInfo(String userID, String password, String catalog) {
 		uid = userID;
 		pwd = password;
 		cat = catalog;
 	}
 	
-	public String getUserID()
-	{
+	public String getUserID() {
 		return uid;
 	}
 	
-	public void setUserID(String value)
-	{
+	public void setUserID(String value) {
 		uid = value;
 	}
 	
-	public String getPassword()
-	{
+	public String getPassword() {
 		return pwd;
 	}
 	
-	public void setPassword(String value)
-	{
+	public void setPassword(String value) {
 		pwd = value;
 	}
 	
-	public String getCatalog()
-	{
+	public String getCatalog() {
 		return cat;
 	}
 	
-	public void setCatalog(String catalog)
-	{
+	public void setCatalog(String catalog) {
 		cat = catalog;
 	}
 }
