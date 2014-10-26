@@ -7,7 +7,7 @@ public class DBWorldQueries {
 	}
 
 	public static String getCountriesByName() {
-		return "select CountryCode, Name, Population " + "from CountryCode "
+		return "select Code, Name, Population " + "from Country "
 				+ "order by Name";
 	}
 }
