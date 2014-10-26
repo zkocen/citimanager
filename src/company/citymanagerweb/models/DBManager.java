@@ -40,9 +40,8 @@ public class DBManager implements Serializable {
 			e.printStackTrace();
 			return false;
 		}
-		if (cn == null) {
+		if (cn == null) 
 			return false;
-		}
 		return true;
 	}
 
@@ -53,7 +52,7 @@ public class DBManager implements Serializable {
 					cn.close();
 				}
 			}
-			if (keepAlive) {
+			if (!keepAlive) {
 				cn = null;
 			}
 		} catch (Exception ex) {

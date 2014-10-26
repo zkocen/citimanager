@@ -15,27 +15,27 @@ public class DBUserInfo {
 		cat = catalog;
 	}
 
-	public String getUid() {
+	public String getUserID() {
 		return uid;
 	}
 
-	public void setUid(String uid) {
-		this.uid = uid;
+	public void setUserID(String value) {
+		uid = value;
 	}
 
-	public String getPwd() {
+	public String getPassword() {
 		return pwd;
 	}
 
-	public void setPwd(String pwd) {
-		this.pwd = pwd;
+	public void setPassword(String value) {
+		pwd = value;
 	}
 
-	public String getCat() {
+	public String getCatalog() {
 		return cat;
 	}
 
-	public void setCat(String cat) {
-		this.cat = cat;
+	public void setCatalog(String catalog) {
+		cat = catalog;
 	}
 }

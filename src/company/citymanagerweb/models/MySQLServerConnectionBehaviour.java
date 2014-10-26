@@ -2,6 +2,7 @@ package company.citymanagerweb.models;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import com.mysql.jdbc.Driver;
 
 public class MySQLServerConnectionBehaviour extends DBUserInfo implements ServerConnectionBehaviour {
 	
@@ -27,22 +28,21 @@ public class MySQLServerConnectionBehaviour extends DBUserInfo implements Server
 
 	@Override
 	public String getConnectionURL() {
-		return String.format("jdbc:mysql:localhost/%s"
+		return String.format("jdbc:mysql://localhost/%s"
 				+ "?user=%s&password=%s"
-				, getCat()
-				, getUid()
-				, getPwd());
+				, getCatalog()
+				, getUserID()
+				, getPassword());  
 	}
 
 	@Override
 	public String getConnectionDetails() {
-		return "MySQL Database connection to " + getCat();
+		return "MySQL Database connection to " + getCatalog();
 	}
 
 	@Override
 	public String getTablesSchemaQuery() {
 		return "select table_name from information_schema.tables "
-				+ "where table_schema = " + getCat(); 
+				+ "where table_schema = " + getCatalog(); 
 	}
-
 }
